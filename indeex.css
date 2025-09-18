@@ -1,0 +1,146 @@
+/* ===== Botão Neon ===== */
+.meu-botao {
+    padding: 20px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #f53fe6;
+    color: white;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 5px #f53fe6;
+    text-decoration: none; /* caso seja <a> */
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* para o nossa história*/
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;     /* centraliza verticalmente */
+    min-height: 100vh;       /* altura mínima = altura da tela */
+    flex-direction: column;  /* organiza conteúdo em coluna */
+}
+
+.container {
+    text-align: center;
+}
+
+
+.meu-botao:hover {
+    box-shadow: 0 0 10px #f53fe6,
+                0 0 20px #f53fe6,
+                0 0 40px #ff00ff,
+                0 0 80px #ff00ff;
+}
+
+/* ===== Container da Galeria ===== */
+.galeria-animada {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.linha img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s; /* suaviza a animação */
+    opacity: 0.7; /* padrão mais “apagada” */
+}
+
+.linha img:hover {
+    opacity: 1; /* fica totalmente visível */
+    transform: scale(1.1); /* aumenta um pouco */
+    box-shadow: 0 0 20px #f53fe6,
+                0 0 40px #ff00ff; /* efeito neon */
+}
+
+
+/* ===== Opcional: centralizar o conteúdo ===== */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+
+.meu-botao {
+    position: fixed;
+    bottom: 20px; /* distância da borda inferior da tela */
+    right: 20px;  /* distância da borda direita da tela */
+}
+
+
+/* contador */
+
+.contador-neon {
+  font-size: 3em;
+  color: #f53fe6;
+  text-shadow: 0 0 10px #f53fe6, 0 0 20px #ff00ff, 0 0 30px #f53fe6;
+  margin-top: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.texto-emocional {
+  position: fixed;          /* Fica sempre visível na tela */
+  bottom: 80px;             /* Abaixo do botão neon */
+  left: 50%;                /* Centraliza horizontalmente */
+  transform: translateX(-50%);
+  color: #ff69b4;           /* Cor rosa neon */
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+    0 0 5px #ff69b4,
+    0 0 10px #ff1493,
+    0 0 20px #ff00ff,
+    0 0 30px #f53fe6;      /* Efeito neon */
+  max-width: 90%;           /* Para caber bem em telas pequenas */
+  line-height: 1.5em;       /* Espaçamento entre linhas */
+  pointer-events: none;     /* Não bloqueia cliques no botão */
+  animation: piscarNeon 2s infinite alternate;
+}
+
+/* Efeito de neon piscando suavemente */
+@keyframes piscarNeon {
+  0% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff1493, 0 0 20px #ff00ff, 0 0 30px #f53fe6; }
+  50% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 40px #ff00ff, 0 0 60px #f53fe6; }
+  100% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff1493, 0 0 20px #ff00ff, 0 0 30px #f53fe6; }
+}
+
+
+.texto-emocional {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff69b4;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff1493, 0 0 20px #ff00ff, 0 0 30px #f53fe6;
+  max-width: 90%;
+  line-height: 1.5em;
+  pointer-events: none;
+  animation: piscarNeon 2s infinite alternate, fadeInTexto 3s forwards;
+  opacity: 0; /* inicia invisível */
+}
+
+@keyframes fadeInTexto {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

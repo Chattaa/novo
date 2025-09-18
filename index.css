@@ -1,0 +1,94 @@
+body {
+    margin: 0; /* Remove as margens padrão do body */
+    display: flex; /* Para centralizar verticalmente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+    background-color: #000000; /* Um fundo claro */
+}
+
+.container {
+    /* Este div é apenas para envolver o botão e garantir o centralizado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meu-botao {
+    padding: 30px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #f53fe6; /* Rosa neon */
+    color: white;
+    transition: 0.3s ease-in-out; /* Suaviza a animação */
+    box-shadow: 0 0 5px #f53fe6; /* brilho leve já de início */
+}
+
+.meu-botao:hover {
+    box-shadow: 0 0 10px #f53fe6,
+                0 0 20px #f53fe6,
+                0 0 40px #ff00ff,
+                0 0 80px #ff00ff; /* brilho forte no hover */
+}
+
+
+.meu-botao:hover {
+    background-color: #ffffff;
+    text-shadow: 0 0 5px #a020f0,
+                 0 0 10px #a020f0,
+                 0 0 20px #ff00ff,
+                 0 0 40px #ff00ff; /* brilho neon no texto */
+}
+
+
+.texto-emocional {
+  position: fixed;          /* Fica sempre visível na tela */
+  bottom: 80px;             /* Abaixo do botão neon */
+  left: 50%;                /* Centraliza horizontalmente */
+  transform: translateX(-50%);
+  color: #ff69b4;           /* Cor rosa neon */
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+    0 0 5px #ff69b4,
+    0 0 10px #ff1493,
+    0 0 20px #ff00ff,
+    0 0 30px #f53fe6;      /* Efeito neon */
+  max-width: 90%;           /* Para caber bem em telas pequenas */
+  line-height: 1.5em;       /* Espaçamento entre linhas */
+  pointer-events: none;     /* Não bloqueia cliques no botão */
+  animation: piscarNeon 2s infinite alternate;
+}
+
+/* Efeito de neon piscando suavemente */
+@keyframes piscarNeon {
+  0% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff1493, 0 0 20px #ff00ff, 0 0 30px #f53fe6; }
+  50% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 40px #ff00ff, 0 0 60px #f53fe6; }
+  100% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff1493, 0 0 20px #ff00ff, 0 0 30px #f53fe6; }
+}
+
+
+.texto-emocional {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff69b4;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff1493, 0 0 20px #ff00ff, 0 0 30px #f53fe6;
+  max-width: 90%;
+  line-height: 1.5em;
+  pointer-events: none;
+  animation: piscarNeon 2s infinite alternate, fadeInTexto 3s forwards;
+  opacity: 0; /* inicia invisível */
+}
+
+@keyframes fadeInTexto {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
